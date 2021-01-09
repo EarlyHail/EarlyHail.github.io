@@ -1,9 +1,10 @@
 ---
 layout: post
-title: "카테고리 태그 만들기"
+title: "Jekyll 카테고리 태그 만들기"
 date: 2021-01-09
 author: EarlyHail
 categories: Jekyll
+description: "Jekyll 카테고리와 Anchor를 이용한 태그 만들기"
 tags: Jekyll
 ---
 
@@ -60,12 +61,13 @@ Category의 종류는 각 post에 입력되며 [Jekyll에 의해 `Global Variabl
 
 ## 3. Anchor 위치 조정
 
-카테고리를 클릭하면 해당 카테고리의 위치로 가지만 Layout에 헤더가 존재하는 Jekyll 템플릿에서는 카테고리가 가려진다.
+카테고리를 클릭하면 해당 카테고리의 위치로 이동한다.
+하지만 Layout에 헤더가 존재하는 Jekyll 템플릿에서는 카테고리가 가려지는 현상이 발생한다.
 
 ![Hidden-Category](/assets/posts/jekyll/hidden-category.png)
-Dummy Posts 5 위에 Category가 있지만 헤더에 가려진 상태이다.
+Dummy Posts 5 위에 Category 이름이 있지만 헤더에 가려진 상태이다.
 
-JavaScript의 앵커링 시 이벤트 리스터를 추가하여 조절하는 방법도 있지만, 간단한 CSS 트릭을 이용해보자.
+JavaScript를 이용하여 앵커링 시 이벤트 리스너를 추가하여 조절하는 방법도 있지만, 간단한 CSS 트릭을 이용해보자.
 
 1.  Hidden Anchor 생성
 
