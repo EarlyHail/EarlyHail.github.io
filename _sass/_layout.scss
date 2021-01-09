@@ -451,3 +451,24 @@ pre code.hljs {
 		}
 	}
 }
+.anchor {
+	display: block;
+	position: relative;
+	top: -250px;
+	visibility: hidden;
+}
+
+.categories-box {
+	display: flex;
+	flex-flow: wrap;
+	.category-box {
+		margin-right: 5px;
+		margin-bottom: 5px;
+		border-radius: 10px;
+		background-color: lightskyblue;
+		padding: 0px 12px;
+		.category-content {
+			color: white;
+		}
+	}
+}
