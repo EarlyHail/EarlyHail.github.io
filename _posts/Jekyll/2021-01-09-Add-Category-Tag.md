@@ -11,7 +11,7 @@ tags: Jekyll
 
 Posts에서 카테고리를 간단하게 찾을 수 있도록 HTML의 `anchor`를 이용한 카테고리 태그를 만들어보자.
 
-![Tag](img/tags.png)
+![Tag](/assets/posts/jekyll/tags.png)
 
 ## 1. 태그 이동 기능 추가
 
@@ -62,7 +62,7 @@ Category의 종류는 각 post에 입력되며 [Jekyll에 의해 `Global Variabl
 
 카테고리를 클릭하면 해당 카테고리의 위치로 가지만 Layout에 헤더가 존재하는 Jekyll 템플릿에서는 카테고리가 가려진다.
 
-![Hidden-Category](img/hidden-category.png)
+![Hidden-Category](/assets/posts/jekyll/hidden-category.png)
 Dummy Posts 5 위에 Category가 있지만 헤더에 가려진 상태이다.
 
 JavaScript의 앵커링 시 이벤트 리스터를 추가하여 조절하는 방법도 있지만, 간단한 CSS 트릭을 이용해보자.
@@ -90,7 +90,7 @@ JavaScript의 앵커링 시 이벤트 리스터를 추가하여 조절하는 방
 
 3.  이제 Tag를 클릭하면 카테고리 이름이 잘 보인다.
 
-    ![Show-Category](img/show-category.png)
+    ![Show-Category](/assets/posts/jekyll/show-category.png)
 
     Tag를 클릭하면 보이지않는 Anchor로 이동하고 Anchor는 카테고리 이름보다 250픽셀 위에 위치하고 있기 때문에 카테고리 명을 확인할 수 있다.
 
