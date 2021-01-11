@@ -453,6 +453,17 @@ pre code.hljs {
 	}
 }
 
+// *****************************************
+// Belows are Custom Styles
+// 이하 코드는 커스텀 CSS 입니다.
+// *****************************************
+
+.view-all-posts-box {
+	display: flex;
+	justify-content: flex-end;
+	margin-bottom: 8px;
+}
+
 .anchor {
 	display: block;
 	position: relative;
