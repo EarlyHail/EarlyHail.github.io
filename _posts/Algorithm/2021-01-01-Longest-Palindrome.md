@@ -1,14 +1,14 @@
 ---
 layout: post
 title: 가장 긴 팰린드롬
-date: 2021-01-01 22:00:00 +0900
+date: 2021-01-12 21:17:00 +0900
 author: EarlyHail
 categories: "Algorithm"
 description: "프로그래머스 연습문제 Level3 가장 긴 팰린드롬 JavaScript"
 tags: "Algorithm"
 ---
 
-## 문제 이름
+## 가장 긴 팰린드롬
 
 [문제 링크](https://programmers.co.kr/learn/courses/30/lessons/12904?language=javascript)
 
