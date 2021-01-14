@@ -1,10 +1,10 @@
 ---
 layout: post
 title: 추석 트래픽
-date: 2021-01-14 20:00:00 +0900
+date: 2021-01-14 21:00:00 +0900
 author: EarlyHail
 categories: "Algorithm"
-description: 프로그래머스 2018 카카오 1차 추석 트래픽
+description: 프로그래머스 Level3 2018 카카오 1차 추석 트래픽
 tags: "Algorithm"
 ---
 
