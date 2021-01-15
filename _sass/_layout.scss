@@ -458,6 +458,20 @@ pre code.hljs {
 // 이하 코드는 커스텀 CSS 입니다.
 // *****************************************
 
+@font-face {
+	font-family: "GreatVibes";
+	src: url("/assets/fonts/GreatVibes-Regular.otf");
+}
+
+.custom-logo {
+	display: flex;
+	.text-logo {
+		font-family: "GreatVibes";
+		margin: 0;
+		align-self: center;
+	}
+}
+
 .view-all-posts-box {
 	display: flex;
 	justify-content: flex-end;

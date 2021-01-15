@@ -8,7 +8,7 @@ exclude:
   - "/vendor/"
 
 # Site settings
-title: "나도 한다. 블로그"
+title: "EarlyHail의 블로그입니다"
 subtitle: "남는건 기록뿐이다"
 email: hojin5633@gmail.com
 name: Hojin Lee
