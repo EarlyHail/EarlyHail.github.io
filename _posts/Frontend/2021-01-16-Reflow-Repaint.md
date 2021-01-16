@@ -13,14 +13,19 @@ tags: Frontend
 ### 브라우저 동작 과정
 
 1. HTML 마크업 처리 후 DOM 트리 생성
+
 2. CSS 마크업 처리 후 CSSOM 트리 생성
+
 3. DOM + CSSOM = Render Tree
+
 4. 렌더 트리 배치(레이아웃) 실행. 정확한 위치 크기 계산 (Layout)
+
 5. 화면에 그리기 (Painting)
 
 # Reflow
 
 - Layout 과정을 다시 수행 (브라우저 동작 과정 중 4단계)
+
 - HTML 요소의 크기, 위치, 레이아웃 수치를 수정하는 등의 기하학적 형태를 변경할 때 발생
 
   Render Tree와 각 요소들의 크기와 위치를 다시 계산하는 Layout 과정을 다시 수행하고 Painting 과정을 수행한다.
@@ -28,8 +33,11 @@ tags: Frontend
 ### Reflow가 발생하는경우
 
 - DOM 요소의 위치, 크기 변경
+
 - 브라우저의 크기 변경
+
 - 사용자 행동에 따른 변화 (hover, input, scroll 등......)
+
 - offset 또는 client 속성을 접근할 때
 
 JavaScript에서 속성을 접근하거나 변경할 때 Reflow가 발생하는 경우가 많다.
@@ -55,6 +63,7 @@ JavaScript에서 속성을 접근하거나 변경할 때 Reflow가 발생하는 
 # Repaint
 
 - Painting 과정을 다시 수행 (브라우저 동작 과정 중 5단계)
+
 - `background-color`, `visibility`, `outline`, `border`등 레이아웃에 영향을 주지 않는 속성이 변경될 때 Repaint가 진행된다.
 
   ex) 배경 색을 변경한다고 HTML 요소의 위치, 크기를 다시 계산할 필요는 없기 때문에 Repaint만 발생한다.
