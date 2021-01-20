@@ -198,7 +198,7 @@ describe("UserList Test", () => {
 
 ### 결과
 
-![TestResult](/assets/posts/Frontend/Jest-Api-Test-MSW/test1.png)
+![TestResult](/assets/posts/Frontend/Jest-API-Test-MSW/test1.png)
 
 버튼 클릭 이벤트만 활성화 시켜줘도 테스트가 잘 된다!
 
