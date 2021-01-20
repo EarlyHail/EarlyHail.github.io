@@ -45,117 +45,103 @@ npm install --save-dev @testing-library/react
 
 간단한 counter를 구현해보자.
 
-<details>
-  <summary>CounterContainer.js</summary>
+- CounterContainer.js
 
-```javascript
-import React, { useState } from "react";
-import CounterPresenter from "./CounterPresenter";
+  ```javascript
+  import React, { useState } from "react";
+  import CounterPresenter from "./CounterPresenter";
 
-const CounterContainer = () => {
-  const [counter, setCounter] = useState(0);
-  const increment = () => {
-    setCounter(() => counter + 1);
+  const CounterContainer = () => {
+    const [counter, setCounter] = useState(0);
+    const increment = () => {
+      setCounter(() => counter + 1);
+    };
+    const decrement = () => {
+      setCounter(() => counter - 1);
+    };
+    return (
+      <CounterPresenter
+        counter={counter}
+        increment={increment}
+        decrement={decrement}
+      />
+    );
   };
-  const decrement = () => {
-    setCounter(() => counter - 1);
+  export default CounterContainer;
+  ```
+
+- CounterPresenter.js
+
+  ```javascript
+  import React from "react";
+  import styled from "styled-components";
+
+  const CounterDiv = styled.div`
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    font-size: 20px;
+    font-weight: bold;
+  `;
+  const CounterPresenter = ({ counter, increment, decrement }) => {
+    return (
+      <CounterDiv>
+        <button type="button" onClick={decrement}>
+          -
+        </button>
+        <div id="counter">{counter}</div>
+        <button type="button" onClick={increment}>
+          +
+        </button>
+      </CounterDiv>
+    );
   };
-  return (
-    <CounterPresenter
-      counter={counter}
-      increment={increment}
-      decrement={decrement}
-    />
-  );
-};
-export default CounterContainer;
-```
+  export default CounterPresenter;
+  ```
 
-</details>
+- App.js
 
-<details>
-  <summary>CounterPresenter.js</summary>
+  ```javascript
+  import CounterContainer from "./CounterContainer";
 
-```javascript
-import React from "react";
-import styled from "styled-components";
+  function App() {
+    return <CounterContainer />;
+  }
 
-const CounterDiv = styled.div`
-  display: flex;
-  justify-content: center;
-  margin-top: 30px;
-  font-size: 20px;
-  font-weight: bold;
-`;
-const CounterPresenter = ({ counter, increment, decrement }) => {
-  return (
-    <CounterDiv>
-      <button type="button" onClick={decrement}>
-        -
-      </button>
-      <div id="counter">{counter}</div>
-      <button type="button" onClick={increment}>
-        +
-      </button>
-    </CounterDiv>
-  );
-};
-export default CounterPresenter;
-```
-
-</details>
-
-<details>
-  <summary>App.js</summary>
-
-```javascript
-import CounterContainer from "./CounterContainer";
-
-function App() {
-  return <CounterContainer />;
-}
-
-export default App;
-```
-
-</details>
+  export default App;
+  ```
 
 ## 3. 테스트 해보기
 
-`src/__test__` 폴더를 만들어서 테스트 코드를 만들어보자.
+- `src/__test__` 폴더를 만들어서 테스트 코드를 만들어보자.
 
-<details>
-  <summary>__test__/Counter.test.js</summary>
+  ```javascript
+  import React from "react";
+  import { screen, fireEvent, render } from "@testing-library/react";
+  import CounterContainer from "../CounterContainer";
 
-```javascript
-import React from "react";
-import { screen, fireEvent, render } from "@testing-library/react";
-import CounterContainer from "../CounterContainer";
-
-describe("Counter Test", () => {
-  test("첫 번째 카운터는 0입니다.", () => {
-    render(<CounterContainer />);
-    const counter = document.querySelector("#counter");
-    expect(counter.innerHTML).toBe("0");
+  describe("Counter Test", () => {
+    test("첫 번째 카운터는 0입니다.", () => {
+      render(<CounterContainer />);
+      const counter = document.querySelector("#counter");
+      expect(counter.innerHTML).toBe("0");
+    });
+    test("+ 클릭 시 카운터는 1입니다.", () => {
+      render(<CounterContainer />);
+      fireEvent.click(screen.getByText("+"));
+      const counter = document.querySelector("#counter");
+      expect(counter.innerHTML).toBe("1");
+    });
+    test("- 클릭 시 카운터는 0입니다.", () => {
+      render(<CounterContainer />);
+      fireEvent.click(screen.getByText("-"));
+      const counter = document.querySelector("#counter");
+      expect(counter.innerHTML).toBe("-1");
+    });
   });
-  test("+ 클릭 시 카운터는 1입니다.", () => {
-    render(<CounterContainer />);
-    fireEvent.click(screen.getByText("+"));
-    const counter = document.querySelector("#counter");
-    expect(counter.innerHTML).toBe("1");
-  });
-  test("- 클릭 시 카운터는 0입니다.", () => {
-    render(<CounterContainer />);
-    fireEvent.click(screen.getByText("-"));
-    const counter = document.querySelector("#counter");
-    expect(counter.innerHTML).toBe("-1");
-  });
-});
-```
+  ```
 
-</details>
-
-`npm test`로 테스트를 실행시켜보자.
+- `npm test`로 테스트를 실행시켜보자.
 
 ![testresult](/assets/posts/Frontend/Jest-React-Test/test1.png)
 
@@ -188,32 +174,29 @@ describe("Counter Test", () => {
 
 ### BeforeEach
 
-<details>
-  <summary>__test__/Counter.test.js</summary>
+- **test**/Counter.test.js
 
-```javascript
-describe("Counter Test", () => {
-  beforeEach(() => {
-    render(<CounterContainer />);
+  ```javascript
+  describe("Counter Test", () => {
+    beforeEach(() => {
+      render(<CounterContainer />);
+    });
+    test("첫 번째 카운터는 0입니다.", () => {
+      const counter = document.querySelector("#counter");
+      expect(counter.innerHTML).toBe("0");
+    });
+    test("+ 클릭 시 카운터는 1입니다.", () => {
+      fireEvent.click(screen.getByText("+"));
+      const counter = document.querySelector("#counter");
+      expect(counter.innerHTML).toBe("1");
+    });
+    test("- 클릭 시 카운터는 0입니다.", () => {
+      fireEvent.click(screen.getByText("-"));
+      const counter = document.querySelector("#counter");
+      expect(counter.innerHTML).toBe("-1");
+    });
   });
-  test("첫 번째 카운터는 0입니다.", () => {
-    const counter = document.querySelector("#counter");
-    expect(counter.innerHTML).toBe("0");
-  });
-  test("+ 클릭 시 카운터는 1입니다.", () => {
-    fireEvent.click(screen.getByText("+"));
-    const counter = document.querySelector("#counter");
-    expect(counter.innerHTML).toBe("1");
-  });
-  test("- 클릭 시 카운터는 0입니다.", () => {
-    fireEvent.click(screen.getByText("-"));
-    const counter = document.querySelector("#counter");
-    expect(counter.innerHTML).toBe("-1");
-  });
-});
-```
-
-</details>
+  ```
 
 위 코드처럼 `beforeEach`에 callback함수를 등록하고 그 안에 test 전에 실행될 기능들을 추가하면 각 테스트 시작 전에 실행시킬 수 있다!
 

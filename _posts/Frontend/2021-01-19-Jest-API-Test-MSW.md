@@ -16,67 +16,61 @@ MSW(Mock Server Worker)는 간단하게 말하면 테스트용 서버를 만드�
 
 ## 1. UserList 컴포넌트 만들기
 
-<details>
-<summary>UserListContainer.js</summary>
+- UserListContainer.js
 
-```javascript
-import React, { useState } from "react";
-import UserListPresenter from "./UserListPresenter";
+  ```javascript
+  import React, { useState } from "react";
+  import UserListPresenter from "./UserListPresenter";
 
-const UserListContainer = () => {
-  const [users, setUsers] = useState([]);
-  const requestUsers = async () => {
-    const newUsers = await fetch("127.0.0.1:3000/users", {
-      method: "GET",
-    });
-    if (newUsers.length > 0) {
-      setUsers(() => newUsers);
-    }
+  const UserListContainer = () => {
+    const [users, setUsers] = useState([]);
+    const requestUsers = async () => {
+      const newUsers = await fetch("127.0.0.1:3000/users", {
+        method: "GET",
+      });
+      if (newUsers.length > 0) {
+        setUsers(() => newUsers);
+      }
+    };
+    return <UserListPresenter users={users} requestUsers={requestUsers} />;
   };
-  return <UserListPresenter users={users} requestUsers={requestUsers} />;
-};
-export default UserListContainer;
-```
+  export default UserListContainer;
+  ```
 
-</details>
+- UserListPresenter.js
 
-<details>
-<summary>UserListPresenter.js</summary>
+  ```javascript
+  import React from "react";
+  import styled from "styled-components";
 
-```javascript
-import React from "react";
-import styled from "styled-components";
+  const UserList = styled.div`
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    font-size: 20px;
+    font-weight: bold;
+  `;
 
-const UserList = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin: 20px;
-  font-size: 20px;
-  font-weight: bold;
-`;
-
-const UserListPresenter = ({ users, requestUsers }) => {
-  return (
-    <>
-      <UserList>
-        {users.map((user) => {
-          return (
-            <div key={user.id}>
-              {user.id} : {user.name}
-            </div>
-          );
-        })}
-      </UserList>
-      <button type="button" onClick={requestUsers}>
-        유저 새로고침
-      </button>
-    </>
-  );
-};
-export default UserListPresenter;
-```
-
-</details>
+  const UserListPresenter = ({ users, requestUsers }) => {
+    return (
+      <>
+        <UserList>
+          {users.map((user) => {
+            return (
+              <div key={user.id}>
+                {user.id} : {user.name}
+              </div>
+            );
+          })}
+        </UserList>
+        <button type="button" onClick={requestUsers}>
+          유저 새로고침
+        </button>
+      </>
+    );
+  };
+  export default UserListPresenter;
+  ```
 
 `UserList`는 사용자 리스트를 보여주고 버튼을 누르면 서버로부터 UserList를 받아 사용자 리스트를 새로고침 하는 컴포넌트이다.
 
@@ -186,9 +180,6 @@ npm i -D msw
 
 `__test__/UserList.test.js`에 테스트 코드를 작성해보자.
 
-<details>
-  <summary>UserList.test.js</summary>
-
 ```javascript
 import React from "react";
 import { screen, fireEvent, render, waitFor } from "@testing-library/react";
@@ -204,8 +195,6 @@ describe("UserList Test", () => {
   });
 });
 ```
-
-</details>
 
 ### 결과
 
