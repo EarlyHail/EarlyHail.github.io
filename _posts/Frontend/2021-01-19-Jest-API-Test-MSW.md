@@ -25,9 +25,10 @@ MSW(Mock Server Worker)는 간단하게 말하면 테스트용 서버를 만드�
   const UserListContainer = () => {
     const [users, setUsers] = useState([]);
     const requestUsers = async () => {
-      const newUsers = await fetch("127.0.0.1:3000/users", {
+      const response = await fetch("http://111.111.111.111:3000/users", {
         method: "GET",
       });
+      const newUsers = await response.json();
       if (newUsers.length > 0) {
         setUsers(() => newUsers);
       }
@@ -135,7 +136,7 @@ npm i -D msw
   ```javascript
   import { rest } from "msw";
   export const handlers = [
-    rest.get("http://localhost:3000/users", (req, res, ctx) => {
+    rest.get("http://111.111.111.111:3000/users", (req, res, ctx) => {
       return res(
         ctx.status(200),
         ctx.json([
