@@ -19,6 +19,9 @@ cover: "/assets/header_image.jpg"
 logo: "/assets/logo.png"
 disqus_shortname: earlyhail
 
+# custom settings
+future: true
+
 # Build settings
 markdown: kramdown
 inter_post_navigation: false
