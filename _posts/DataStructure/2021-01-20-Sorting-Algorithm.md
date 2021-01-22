@@ -12,8 +12,6 @@ tags: 자료구조
 
 ![선택정렬](/assets/posts/DataStructure/Sorting-Algorithm/Selection-Sort.gif)
 
-<!-- ![선택정렬](/assets/posts/DataStructure/Sorting-Algorithm/Selection-Sort.gif){:width="100px"}. -->
-
 가장 기초적인 정렬 알고리즘이다.
 
 - 알고리즘
@@ -308,4 +306,4 @@ Divide & Conquer 의 대표적인 알고리즘 중 하나이다.
   };
   ```
 
-해당 자료의 모든 이미지 파일의 출처는 (위키피디아)[https://en.wikipedia.org/wiki/Main_Page] 입니다.
+해당 자료의 모든 이미지 파일의 출처는 [위키피디아](https://en.wikipedia.org/wiki/Main_Page) 입니다.
