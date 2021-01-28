@@ -1,10 +1,10 @@
 ---
 layout: post
 title: Debounce와 Throttle
-date: 2021-01-28 01:00:00 +0900
+date: 2021-01-28 11:00:00 +0900
 author: EarlyHail
 categories: Frontend
-description: Debounc와 Throttle에 대해 알아보고 구현해보자
+description: Debounce와 Throttle에 대해 알아보고 구현해보자
 tags: [Frontend, Debounce, Throttle]
 ---
 
