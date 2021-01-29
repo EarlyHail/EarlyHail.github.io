@@ -198,7 +198,7 @@ benchmarkObj(size);
 
 ![map-obj-benchmark](/assets/posts/JavaScript/Map-vs-Object/img2.png)
 
-Map이 Set은 약 2배, Get은 약 4배 빠른 성능을 보였고 Delete는 약간 느린 성능을 보였다.
+Map이 Set은 약 2배, Get은 약 30~40 배 빠른 성능을 보였고 Delete는 약간 느린 성능을 보였다.
 
 MDN은 `Map은 잦은 키-값 쌍의 추가와 제거에서 더 좋은 성능을 보입니다.`라고 하는데... 결과가 달라서 당황스럽다
 
