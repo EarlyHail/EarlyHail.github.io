@@ -12,13 +12,13 @@ tags: Network
 
 주소창에 사이트 이름을 친 이후부터, 웹 페이지 파일을 받을 때 까지 무슨 일이 일어나는지 정리해보자.
 
-![](/assets/posts/network/Process-of-Access-Website/Untitled0.png)
+![](/assets/posts/Network/Process-of-Access-Website/Untitled0.png)
 
 ## Client IP 구하기
 
 운영체제는 컴퓨터의 IP, Subnet Mask, Gateway 주소를 관리한다.
 
-![](/assets/posts/network/Process-of-Access-Website/Untitled1.png)
+![](/assets/posts/Network/Process-of-Access-Website/Untitled1.png)
 
 만약 IP 주소가 없다면?
 
@@ -46,7 +46,7 @@ Client는 DHCP 서버로부터 사용 가능한 IP를 받아온다.
 
 - 3, 4 과정에서 Client가 사용할 정보들이 같이 전송된다.
 
-  ![](/assets/posts/network/Process-of-Access-Website/Untitled2.png)
+  ![](/assets/posts/Network/Process-of-Access-Website/Untitled2.png)
 
 ## 이제 내 IP가 있으니, 요청을 보내보자.
 
@@ -64,17 +64,17 @@ Application 계층부터 Data Link 계층까지 `데이터가 정제`되고 `필
 
 - Application Layer - 구글 주소를 입력하고 엔터를 누르면 HTTP Request Data가 만들어진다.
 
-  ![](/assets/posts/network/Process-of-Access-Website/Untitled3.png)
+  ![](/assets/posts/Network/Process-of-Access-Website/Untitled3.png)
 
 - Transport Layer - HTTP Request를 Payload에 넣고, Source 의 port와 Destination의 port를 추가한 Datagram을 만든다.
 
-  ![](/assets/posts/network/Process-of-Access-Website/Untitled4.png)
+  ![](/assets/posts/Network/Process-of-Access-Website/Untitled4.png)
 
 - Network Layer - Datagram에 Source IP 주소, Destination의 IP 주소를 추가한 Packet을 만든다.
 
   `Destination IP`주소는 `DNS`를 이용하여 받아온다.
 
-  ![](/assets/posts/network/Process-of-Access-Website/Untitled5.png)
+  ![](/assets/posts/Network/Process-of-Access-Website/Untitled5.png)
 
 ## DNS
 
@@ -92,11 +92,11 @@ DNS : Domain Name Service
 
 5. local DNS 서버는 책임 DNS 서버에 호스트의 IP를 질의하여 얻은 후 자신의 캐시에 등록하고 요청한 호스트에게 돌려준다.
 
-   ![](/assets/posts/network/Process-of-Access-Website/Untitled6.png)
+   ![](/assets/posts/Network/Process-of-Access-Website/Untitled6.png)
 
 - Link Layer - Packet에 MAC 주소를 추가한 Frame을 만든다.
 
-  ![](/assets/posts/network/Process-of-Access-Website/Untitled7.png)
+  ![](/assets/posts/Network/Process-of-Access-Website/Untitled7.png)
 
 여기서 Destination MAC Address는 요청의 목적지 Host의 주소가 아닌, 해당 패킷이 처음 거쳐갈 네트워크 장비의 목적지 주소이다!!!
 
@@ -116,7 +116,7 @@ MAC address (a.k.a LAN or 물리 or Ethernet 주소)
 
   MAC 주소는 링크 하나를 통과하기 위해서 사용 (같은 서브넷에서 데이터를 전달하기 위해 사용)
 
-![](/assets/posts/network/Process-of-Access-Website/Untitled8.png)
+![](/assets/posts/Network/Process-of-Access-Website/Untitled8.png)
 
 ex) A가 H한테 Data를 보냄
 
@@ -130,11 +130,11 @@ Address Resolution Protocol
 
 1. Client는 Broadcast를 이용하여 IP를 가지고 MAC 주소를 질의한다.
 
-   ![](/assets/posts/network/Process-of-Access-Website/Untitled9.png)
+   ![](/assets/posts/Network/Process-of-Access-Website/Untitled9.png)
 
 2. 해당 IP주소를 가진 Host는 자신의 Mac 주소를 알려준다.
 
-   ![](/assets/posts/network/Process-of-Access-Website/Untitled10.png)
+   ![](/assets/posts/Network/Process-of-Access-Website/Untitled10.png)
 
 ## Router
 
