@@ -119,11 +119,11 @@ Logical Assignment Operator는 ES2021에 추가되었다.
   // expected output: 0
   ```
 
-  `a &&= 2`는 마치 `a = a && 2`처럼 보이지만 `&&=` 연산은 Short-circuit evaluation이다.
+  `&&=` 연산은 Short-circuit evaluation이다. 따라서 a가 false일 경우 뒤 연산은 실행되지 않는다.
 
-  따라서 a가 false일 경우 뒤 연산은 실행되지 않는다.
+  `a &&= 2`는 마치 `a = a && 2`처럼 보이지만 a가 참일 경우 a가 재할당 되지 않는다.
 
-  참고로 위 식의 transpile 결과는 `a && (a = 2);`이다.
+  `a &&= 2`의 transpile 결과는 `a && (a = 2);`이다.
 
   ```typescript
   let a = 0;
@@ -148,9 +148,11 @@ Logical Assignment Operator는 ES2021에 추가되었다.
   console.log(a.title);
   ```
 
-  `a.duration ||= 10`도 마치 `a.duration = a.duration || 10` 처럼 보이지만, Logical AND assignment처럼 Short-circuit evaluation이다.
+Logical AND assignment처럼 Short-circuit evaluation이다. 따라서 a가 false일 경우 뒤 연산은 실행되지 않는다.
 
-  위 식의 transpile 결과는 `a.duration || (a.duration = 10)`이다.
+`a.duration ||= 10`도 마치 `a.duration = a.duration || 10` 처럼 보이지만 a가 참일 경우 a가 재할당 되지 않는다.
+
+`a.duration ||= 10`의 transpile 결과는 `a.duration || (a.duration = 10)`이다.
 
 ### Logical Assignment Operator의 transpile
 
