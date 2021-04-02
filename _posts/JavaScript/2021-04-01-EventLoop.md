@@ -59,4 +59,30 @@ Callback Queue에서 함수를 꺼내 Call Stack에 삽입한다.
 
 자연스럽게 JavaScript는 Call Stack의 맨 위에 있는 함수를 실행시키며 비동기 함수가 실행된다.
 
+### 예제
+
+- 1번
+
+  ```javascript
+  setTimeout(() => console.log("1번"));
+  console.log("2번");
+  Promise.resolve().then(() => console.log("3번"));
+  console.log("4번");
+  ```
+
+- 2번
+
+  ```javascript
+  setTimeout(() => console.log("1번"));
+  console.log("2번");
+  fetch("some URI").then(() => console.log("3번"));
+  console.log("4번");
+  ```
+
+생각해보고 돌려서 정답을 확인해보자!
+
+2번은 약간 낚시문제인데, 1번과 같은 결과를 **항상 보장하지는 않는다.**
+
+일단 fetch도 Promise를 반환하기 때문에 MicroTask이다. 하지만 fetch는 바로 Promise를 반환하지 않는다!!! ㅎㅎㅎ
+
 EventLoop의 동작이 이해가 안되면 [https://www.youtube.com/watch?v=8aGhZQkoFbQ&t=811s](https://www.youtube.com/watch?v=8aGhZQkoFbQ&t=811s)이 영상을 강력 추천한다.
