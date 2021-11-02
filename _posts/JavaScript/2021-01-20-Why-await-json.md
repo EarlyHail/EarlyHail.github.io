@@ -3,9 +3,9 @@ layout: post
 title: 왜 response.json()을 비동기 처리해야 할까?
 date: 2021-01-20 17:00:00 +0900
 author: EarlyHail
-categories: Frontend
+categories: JavaScript
 description: 왜 response.json()을 비동기 처리해야 할까
-tags: [Frontend, Network, TCP]
+tags: [JavaScript, Network, TCP]
 ---
 
 ## 왜 response.json()을 비동기 처리 해줘야 할까

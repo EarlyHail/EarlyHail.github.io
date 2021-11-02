@@ -3,8 +3,8 @@ layout: post
 title: TypeScript 유용한 문법들
 date: 2021-03-19 22:00:00 +0900
 author: EarlyHail
-categories: JavaScript
-description: TypeScript 타입을 위한 문법 정리
+categories: TypeScript
+description: TypeScript 유용한 위한 문법 정리
 tags: [TypeScript]
 ---
 

@@ -3,9 +3,9 @@ layout: post
 title: EventLoop
 date: 2021-04-01 15:00:00 +0900
 author: EarlyHail
-categories: JavaScript
+categories: Frontend
 description:
-tags: [JavaScript]
+tags: [Frontend, JavaScript]
 ---
 
 자바스크립트는 **Single Thread** 언어이다.

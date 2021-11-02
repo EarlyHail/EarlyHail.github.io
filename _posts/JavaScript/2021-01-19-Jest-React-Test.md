@@ -3,9 +3,9 @@ layout: post
 title: Jest를 이용한 React Test
 date: 2021-01-19 16:00:00 +0900
 author: EarlyHail
-categories: Frontend
+categories: JavaScript
 description: Jest를 이용하여 React Component 테스트 하기
-tags: Frontend
+tags: JavaScript
 ---
 
 ## 1. 테스트 환경 설정하기

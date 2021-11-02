@@ -3,9 +3,9 @@ layout: post
 title: Vanilla JavaScript로 라우팅 구현하기
 date: 2021-02-17 22:00:00 +0900
 author: EarlyHail
-categories: Frontend
+categories: JavaScript
 description: Vanilla JavaScript와 history를 이용하여 라우팅 구현하기
-tags: [Frontend, JavaScript]
+tags: [JavaScript]
 ---
 
 ### 템플릿

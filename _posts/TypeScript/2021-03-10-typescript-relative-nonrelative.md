@@ -5,7 +5,7 @@ date: 2021-03-10 16:00:00 +0900
 author: EarlyHail
 categories: JavaScript
 description:
-tags: TypeScript
+tags: [TypeScript]
 ---
 
 최근 TypeScript 경로 문제때문에 많은 삽질을 했는데 [TypeScript Doc](https://www.typescriptlang.org/docs/handbook/module-resolution.html)에 경로 내용이 나와있어서 정리해보았다.

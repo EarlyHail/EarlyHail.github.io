@@ -3,9 +3,9 @@ layout: post
 title: Jest와 MSW를 이용한 API Test
 date: 2021-01-19 20:00:00 +0900
 author: EarlyHail
-categories: Frontend
+categories: JavaScript
 description: Jest와 MSW를 이용하여 API 테스트 하기
-tags: [Frontend, Test]
+tags: [JavaScript, Test]
 ---
 
 ## MSW
